@@ -1,0 +1,5 @@
+# ignore below directories
+./idea
+# ignore below files
+*.csv
+*.sh
