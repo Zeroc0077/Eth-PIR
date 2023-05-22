@@ -21,11 +21,13 @@ import (
 const privatekey = "fdce6cf6e724e00a5bed9c6ef3be624a307d6bb3d502493e2f043522c1791cf2"
 
 func main() {
+	// using net.Dial to connect to the server
 	conn, err := net.Dial("tcp", "127.0.0.1:20000")
 	if err != nil {
 		log.Fatalf("Failed to dial: %v", err)
 	}
 	log.Println("Connected successfully")
+	// close the connection when the client exits
 	defer func(conn net.Conn) {
 		err := conn.Close()
 		if err != nil {

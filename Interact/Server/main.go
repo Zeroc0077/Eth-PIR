@@ -76,11 +76,13 @@ func main() {
 	}
 	log.Println("Listening on the Port 20000")
 	for {
+		// Accept a connection, and it's a blocking method
 		conn, err := listen.Accept()
 		log.Printf("Accept a connection from %v", conn.RemoteAddr().String())
 		if err != nil {
 			log.Fatalf("Failed to accept: %v", err)
 		}
+		// go routine
 		go process(conn)
 	}
 }

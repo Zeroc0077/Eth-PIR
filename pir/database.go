@@ -3,6 +3,7 @@ package pir
 import "math"
 import "fmt"
 
+// DBinfo the definition of the database
 type DBinfo struct {
 	Num        uint64 // number of DB entries.
 	Row_length uint64 // number of bits per DB entry.
@@ -27,6 +28,7 @@ type Database struct {
 	Data *Matrix
 }
 
+// Squish Store the database with entries decomposed into Z_p elements, and mapped to [-p/2, p/2]
 func (DB *Database) Squish() {
 	//fmt.Printf("Original DB dims: ")
 	//DB.Data.Dim()
